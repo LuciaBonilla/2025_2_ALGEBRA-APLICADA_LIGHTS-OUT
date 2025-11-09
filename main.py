@@ -2,30 +2,54 @@
 Script de ejecución separado para `consigna6`.
 """
 from consigna6 import solve_lights_out
-from utils import print_mat, random_board
-
+from utils import print_matrix
 
 def main():
     examples = {
-        "todo_cero_3x3": [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
-        "una_luz_3x3": [[0, 0, 0], [0, 1, 0], [0, 0, 0]],
-        "random_4x4": None,
+        "todo_cero_3x3": [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0]
+        ],
+        "una_luz_3x3": [
+            [0, 0, 0],
+            [0, 1, 0],
+            [0, 0, 0]
+        ],
+        "conocido_3x3": [
+            [0, 0, 0],
+            [1, 0, 0],
+            [0, 0, 1]
+        ],
+        "conocido_5x5":[
+            [1, 0, 1, 0, 0],
+            [1, 0, 1, 1, 0],
+            [0, 0, 0, 1, 0],
+            [0, 0, 1, 1, 1],
+            [0, 1, 1, 0, 1]
+        ],
+        "conocido_7x7": [
+            [1, 0, 0, 0, 1, 0, 1],
+            [1, 1, 1, 0, 1, 1, 0],
+            [1, 1, 0, 1, 1, 0, 1],
+            [1, 1, 0, 0, 0, 1, 0],
+            [1, 0, 1, 0, 0, 1, 0],
+            [0, 0, 1, 0, 1, 1, 0],
+            [1, 0, 0, 1, 1, 1, 0]
+        ]
+        # Agregar aquí otros tableros para ver su solución.
     }
 
-    # generar tablero aleatorio 
-    examples["random_4x4"] = random_board(4)
-
-    for name, board in examples.items():
+    for name, initial_board in examples.items():
         print(f"-- Ejemplo: {name}")
-        print_mat(board)
+        print_matrix(initial_board)
         try:
-            sol = solve_lights_out(board)
+            solution = solve_lights_out(initial_board)
             print("Solución (matriz):")
-            print_mat(sol)
+            print_matrix(solution)
         except Exception as e:
             print("Error/No solución:", e)
         print()
-
 
 if __name__ == "__main__":
     main()
