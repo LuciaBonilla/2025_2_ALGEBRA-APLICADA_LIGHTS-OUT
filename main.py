@@ -1,5 +1,5 @@
 """
-Script de ejecución separado para `consigna6`.
+Script de ejecución para `consigna6`.
 """
 from consigna6 import solve_lights_out
 from utils import print_matrix
@@ -37,7 +37,6 @@ def main():
             [0, 0, 1, 0, 1, 1, 0],
             [1, 0, 0, 1, 1, 1, 0]
         ]
-        # Agregar aquí otros tableros para ver su solución.
     }
 
     for name, initial_board in examples.items():

@@ -1,10 +1,8 @@
 """Utilidades para el proyecto Lights Out.
 
-Contiene funciones auxiliares usadas por `main.py` y por tests:
-- print_matrix(matrix): imprime una matriz en filas
-- random_board(n): genera una matriz n x n con 0/1 aleatorios 
+Contiene funciones auxiliares usadas por `main.py` y por tests (helpers)
 """
-from typing import List
+from typing import Lis
 
 def print_matrix(matrix: List[List[int]]) -> None:
     for row in matrix:
